@@ -1,13 +1,9 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView
-
 from document_storage.models import Document
 from document_storage.forms import CreateDocForm, UpdateDocForm
 from django.contrib import messages
-
-
-# Create your views here.
 
 
 def index_page(request):
@@ -55,8 +51,6 @@ class UpdateDocument(UpdateView):
             messages.warning(self.request, 'Such document has already exist.')
             pass
 
-        # self.success_url = reverse_lazy('update_document', kwargs={'pk': self.object.pk})
-
     def form_invalid(self, form):
         return super().form_invalid(form)
 
@@ -80,7 +74,6 @@ class ListVersionDocument(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        print(self.kwargs['pk'])
         document = queryset.get(id=self.kwargs['pk'])
         return document.history.all()
 
@@ -93,12 +86,11 @@ class ListFirstLastVersions(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         document = Document.objects.get(id=self.kwargs['pk'])
-        first_version = document.history.first()
-        current_version = document.history.last()
-        first_version = {'name': first_version.name, 'content': first_version.content}
-        current_version = {'name': current_version.name, 'content': current_version.content}
+        first = document.history.first()
+        current = document.history.last()
+        first_version = {'name': first.name, 'content': first.content}
+        current_version = {'name': current.name, 'content': current.content}
         context['pk'] = self.kwargs['pk']  # use to return to details document page
         context['versions'] = {'first version': first_version, 'current version': current_version}
         context['title'] = 'First and current versions of document'
         return context
-

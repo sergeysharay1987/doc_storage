@@ -11,9 +11,6 @@ class CreateDocForm(ModelForm):
     def clean_name(self):
         name = self.cleaned_data['name']
         if Document.objects.filter(name__iexact=name).count() and self.get_context():
-            print(f'self.get_context(): {self.get_context()}')
-            print(f'f.errors: {self.errors}')
-            print(f'form is invalid')
             raise ValidationError('Name of the document must be unique')
         return name
 
