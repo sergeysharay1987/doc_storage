@@ -44,9 +44,7 @@ Initial setup
 
     pip install pip==23.1.2
 
-#. Install poetry, according to `<https://python-poetry.org/docs/#installation>`_.::
-
-    pip install poetry
+#. Install poetry, according to `<https://python-poetry.org/docs/#installation>`_.
 
 Run
 ++++
