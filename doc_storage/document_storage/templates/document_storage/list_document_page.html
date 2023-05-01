@@ -1,0 +1,17 @@
+{% extends 'document_storage/base.html' %}
+
+
+{% block title %}
+    List of documents
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>List of documents</h1>
+    <ul>{% for doc in docs %}
+        <li>{{ doc }} </li>
+        {% endfor %}
+        <a href = "{% url 'details_document' pk=doc.pk %}">Details</a>
+    </ul>
+</div>
+{% endblock %}

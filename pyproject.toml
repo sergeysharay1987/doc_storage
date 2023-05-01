@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "doc-storage"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "doc_storage"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.2"
+python-env = "^1.0.0"
+django-simple-history = "^3.3.0"
+setuptools = "^67.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

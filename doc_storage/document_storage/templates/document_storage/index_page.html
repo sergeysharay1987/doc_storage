@@ -1,0 +1,12 @@
+{% extends 'document_storage/base.html' %}
+
+
+{% block content %}
+
+<h1>Main page</h1>
+<ul>
+ <li><a href = '{% url "list_documents" %}'>List of documents </a></li>
+ <li><a href = '{% url "create_document" %}'>Create document </a> </li>
+</ul>
+
+{% endblock %}
