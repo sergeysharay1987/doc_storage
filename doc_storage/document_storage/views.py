@@ -102,16 +102,3 @@ class ListFirstLastVersions(ListView):
         context['title'] = 'First and current versions of document'
         return context
 
-
-def show_doc(request):
-    doc = Document.objects.get(id=id)
-    context = {'doc': doc}
-    if request.method == 'GET':
-        return render(request, 'document_storage/index_page.html', context)
-
-
-def edit_doc(request, id):
-    doc = Document.objects.get(id=id)
-    context = {'doc': doc}
-    if request.method == 'GET':
-        return render(request, 'document_storage/update_document_page.html', context)
