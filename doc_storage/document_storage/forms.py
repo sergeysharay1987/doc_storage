@@ -18,6 +18,4 @@ class CreateDocForm(ModelForm):
 class UpdateDocForm(CreateDocForm):
 
     def clean_name(self):
-        # print(f'self.errors: {self.errors}')
-        # print(f'')
         return self.cleaned_data['name']
