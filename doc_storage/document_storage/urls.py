@@ -1,15 +1,14 @@
-from django.contrib import admin
 from django.urls import path
 
-from document_storage.views import ListDocument, index_page, CreateDocumentView, ReadDocumentView, ListVersionDocument, \
-    UpdateDocument, ListFirstLastVersions
+from .views import ListDocument, CreateDocumentView, ReadDocumentView, ListVersionDocument, \
+    UpdateDocument, ListFirstLastVersions, IndexPageView
 
 urlpatterns = [
-    path('index/', index_page, name='index'),
+    path('index/', IndexPageView.as_view(), name='index'),
     path('list_documents/', ListDocument.as_view(), name='list_documents'),
     path('create_document/', CreateDocumentView.as_view(), name='create_document'),
     path('details_document/<int:pk>', ReadDocumentView.as_view(), name='details_document'),
     path('update_document/<int:pk>', UpdateDocument.as_view(), name='update_document'),
     path('list_of_all_versions/<int:pk>', ListVersionDocument.as_view(),  name='versions_document'),
-    path('current_and_first_versions/<int:pk>', ListFirstLastVersions.as_view(), name='current_and_first_doc_versions'),
+    path('current_and_first_versions/<int:pk>', ListFirstLastVersions.as_view(), name='current_and_first_versions'),
 ]

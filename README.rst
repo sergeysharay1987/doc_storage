@@ -27,13 +27,17 @@ Initial setup
 
     git clone git@github.com:sergeysharay1987/doc_storage.git
 
+#. Go to the repository directory::
+
+    cd doc_storage
+
 #. Install the Python build dependencies, as described at `<https://github.com/pyenv/pyenv/wiki#suggested-build-environment>`_.
 #. Install pyenv according to `<https://github.com/pyenv/pyenv-installer#installation--update--uninstallation>`_.
-#. Install python 3.10.5::
+#. Install python 3.10.5, using pyenv::
 
     pyenv install 3.10.5
 
-#. Set a python version 3.10.5 in your directory with project (web_calculator/)::
+#. Set a python version 3.10.5 in your directory with project (doc_storage/)::
 
     pyenv local 3.10.5
 
@@ -46,10 +50,14 @@ Initial setup
 
 #. Install poetry, according to `<https://python-poetry.org/docs/#installation>`_.
 
+# Change to the directory, containing manage.py (doc_storage/doc_storage/)::
+
+    cd doc_storage
+
 Run
 ++++
 
 #. Run server::
 
-    python -m manage runserver
+    poetry run python -m manage runserver
 

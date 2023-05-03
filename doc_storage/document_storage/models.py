@@ -1,9 +1,6 @@
-from django.db.models import CharField, TextField, Model, ForeignKey, CASCADE
-from django.urls import reverse
+from django.db.models import CharField, Model, TextField
 from simple_history.models import HistoricalRecords
 
-
-# Create your models here.
 
 class Document(Model):
     name = CharField(max_length=30)

@@ -16,7 +16,7 @@
     <ul>
         <li ><a href = "{% url 'update_document' pk=doc.pk %}">Update document</a></li>
         <li><a href = "{% url 'versions_document' pk=doc.pk %}">Look document's versions</a></li>
-        <li><a href = "{% url 'current_and_first_doc_versions' pk=doc.pk %}">Look current and first document's versions</a></li>
+        <li><a href = "{% url 'current_and_first_versions' pk=doc.pk %}">Look current and first document's versions</a></li>
     </ul>
 </div>
 {% endblock %}
