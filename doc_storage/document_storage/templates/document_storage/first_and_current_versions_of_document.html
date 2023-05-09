@@ -7,9 +7,13 @@
 
 <div>
     <h1>{{ title }}</h1>
+    {% if delta.changes %}
     <ul> {% for change in delta.changes %}
         <p>{{ change.field.capitalize }} changed from <b>{{ change.old }}</b> to <b>{{ change.new }}</b>"</p>
         {% endfor %}
+    {% else %}
+        <p>There is no differences between versions, because you have never updated this document: <b>{{ doc }}</b>"</p>
+        {% endif %}
     </ul>
     <a href = "{% url 'details_document' pk=pk %}">Back to the details page</a>
 </div>

@@ -1,4 +1,4 @@
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, TemplateView
 from .models import Document
@@ -72,14 +72,14 @@ class ListVersionDocument(ListView):
         return super().get_queryset().get(id=self.kwargs['pk']).history.all()
 
 
-class ListFirstLastVersions(ListView):
+class ListFirstLastVersions(DetailView):
     model = Document
     template_name = 'first_and_current_versions_of_document.html'
-    context_object_name = 'docs'
+    context_object_name = 'doc'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        document = Document.objects.get(id=self.kwargs['pk'])
+        document = get_object_or_404(Document, id=self.kwargs['pk'])
         first = document.history.first()
         current = document.history.last()
         delta = first.diff_against(current)

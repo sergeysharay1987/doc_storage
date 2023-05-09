@@ -50,12 +50,14 @@ Initial setup
 
 #. Install poetry, according to `<https://python-poetry.org/docs/#installation>`_.
 
-# Change to the directory, containing manage.py (doc_storage/doc_storage/)::
 
-    cd doc_storage
 
 Run
 ++++
+
+#. Change to the directory, containing manage.py (doc_storage/doc_storage/)::
+
+    cd doc_storage
 
 #. Run server::
 
