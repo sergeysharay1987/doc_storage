@@ -4,9 +4,9 @@ from simple_history.admin import SimpleHistoryAdmin
 
 
 class DocumentAdmin(SimpleHistoryAdmin):
-    list_display = ('id', 'name', 'content')
-    list_display_links = ('name', 'content')
-    history_list_display = ('content', )
+    list_display = ('id', 'name', 'description')
+    list_display_links = ('name', 'description')
+    history_list_display = ('description', )
 
 
 admin.site.register(Document, DocumentAdmin)
