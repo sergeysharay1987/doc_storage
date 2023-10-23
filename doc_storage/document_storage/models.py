@@ -4,7 +4,7 @@ from simple_history.models import HistoricalRecords
 
 class Document(Model):
     name = CharField(max_length=30)
-    content = TextField()
+    description = TextField()
     history = HistoricalRecords()
 
     def __str__(self):
