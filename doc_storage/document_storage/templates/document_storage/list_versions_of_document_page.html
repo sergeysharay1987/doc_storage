@@ -9,10 +9,10 @@
 <div>
     <h1>{{ title }}</h1>
 
-        <ul>{% for ind, doc in docs %}
-            <h3> Version {{ doc.history.get }} </h3>
+        <ul>{% for doc in docs %}
+            <h3> Version {{ doc.history_id }} </h3>
             <li>name = {{ doc.name }}</li>
-            <li>content = {{ doc.content }}</li>
+            <li>description = {{ doc.description }}</li>
 
             {% endfor %}
         </ul>
