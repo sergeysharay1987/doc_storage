@@ -8,9 +8,12 @@
 
 <div>
     <h1>{{ title }}</h1>
-        <ul>{% for doc in docs %}
+
+        <ul>{% for ind, doc in docs %}
+            <h3> Version {{ doc.history.get }} </h3>
             <li>name = {{ doc.name }}</li>
             <li>content = {{ doc.content }}</li>
+
             {% endfor %}
         </ul>
     <a href = "{% url 'details_document' pk=pk %}">Back to the details page</a>
