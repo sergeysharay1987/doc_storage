@@ -20,7 +20,7 @@ def check_words(words):
 class CreateDocForm(ModelForm):
     class Meta:
         model = Document
-        fields = ['name', 'content']
+        fields = ['name', 'description']
 
     def clean_name(self):
         name = self.cleaned_data['name']
