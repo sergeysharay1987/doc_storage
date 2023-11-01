@@ -1,4 +1,4 @@
-from django.db.models import CharField, Model, TextField
+from django.db.models import CharField, Model, TextField, DateTimeField
 from simple_history.models import HistoricalRecords
 
 

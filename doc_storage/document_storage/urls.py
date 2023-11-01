@@ -5,7 +5,7 @@ from .views import (CreateDocumentView, IndexPageView, ListDocument,
                     ReadDocumentView, UpdateDocument)
 
 urlpatterns = [
-    path('index/', IndexPageView.as_view(), name='index'),
+    path('', IndexPageView.as_view(), name='index'),
     path('list_documents/', ListDocument.as_view(), name='list_documents'),
     path('create_document/', CreateDocumentView.as_view(), name='create_document'),
     path('details_document/<int:pk>', ReadDocumentView.as_view(), name='details_document'),
